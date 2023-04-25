@@ -2,10 +2,11 @@ package course2_lesson3_OOP_p2;
 
 public class Bicycle extends Vehicle implements VehicleService {
 
-    public Bicycle(String modelName, int wheelsCount) {
-        super.setModelName(modelName);
-        super.setWheelsCount(wheelsCount);
-    }
+        public Bicycle(String modelName, int wheelsCount) {
+            super.setModelName(modelName);
+            super.setWheelsCount(wheelsCount);
+            super.setVehicleClassName("bicycle");
+        }
 
     public String getModelName() {
         return super.getModelName();
@@ -32,7 +33,7 @@ public class Bicycle extends Vehicle implements VehicleService {
 
     @Override
     public void fitTuneUpgrade() {
-        System.out.println("Upgrade bicycle accordingly ot customer\' request");
+        System.out.println("Upgrade bicycle accordingly ot customer\'s request");
 
     }
 

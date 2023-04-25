@@ -3,8 +3,9 @@ package course2_lesson3_OOP_p2;
 public class Car extends Vehicle implements VehicleService {
 
     public Car(String modelName, int wheelsCount) {
-        setModelName(modelName);
-        setWheelsCount(wheelsCount);
+        super.setModelName(modelName);
+        super.setWheelsCount(wheelsCount);
+        super.setVehicleClassName("car");
     }
 
     private void updateTyre() {
@@ -15,8 +16,12 @@ public class Car extends Vehicle implements VehicleService {
         System.out.println("Проверяем двигатель");
     }
 
+    private void checkBody() {
+        System.out.println("check car body");
+    }
+
     public void fixTyre() {
-        System.out.println(getModelName() + ": fix tyre");
+        System.out.print(getModelName() + ": fix tyre");
         updateTyre();
     }
 
@@ -34,11 +39,13 @@ public class Car extends Vehicle implements VehicleService {
     }
 
     public void regularService() {
-        System.out.println(getModelName() + ": provided regular service");
+        System.out.println(getModelName() + ": regular service");
+        System.out.println("Wheels\n------");
         for (int i = 1; i <= super.getWheelsCount(); i++) {
-            System.out.println("Wheel No." + i);
+            System.out.print("Wheel No." + i + ": ");
             updateTyre();
         }
+        System.out.println("Engine\n------");
         checkEngine();
     }
 
