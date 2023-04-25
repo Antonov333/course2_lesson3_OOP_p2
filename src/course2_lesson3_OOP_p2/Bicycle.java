@@ -1,30 +1,27 @@
 package course2_lesson3_OOP_p2;
 
-public class Bicycle implements VehicleService {
-
-    private final String modelName;
-    private final int wheelsCount;
+public class Bicycle extends Vehicle implements VehicleService {
 
     public Bicycle(String modelName, int wheelsCount) {
-        this.modelName = modelName;
-        this.wheelsCount = wheelsCount;
+        super.setModelName(modelName);
+        super.setWheelsCount(wheelsCount);
     }
 
     public String getModelName() {
-        return modelName;
+        return super.getModelName();
     }
 
     public int getWheelsCount() {
-        return wheelsCount;
+        return super.getWheelsCount();
     }
 
     public void updateTyre() {
-        System.out.println("Меняем покрышку");
+        System.out.println("Меняем покрышку" + " " + getModelName());
     }
 
     @Override
     public void fixTyre() {
-        System.out.println("Fix bicycle tyre accordingly to manual");
+        System.out.println(getModelName() + ": fix bicycle tyre accordingly to manual");
     }
 
     @Override
@@ -34,7 +31,7 @@ public class Bicycle implements VehicleService {
     }
 
     @Override
-    public void upgrade() {
+    public void fitTuneUpgrade() {
         System.out.println("Upgrade bicycle accordingly ot customer\' request");
 
     }
@@ -44,4 +41,5 @@ public class Bicycle implements VehicleService {
         System.out.println("Provide regular service to bicycle accordingly to season and mileage");
 
     }
+
 }

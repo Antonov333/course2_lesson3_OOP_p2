@@ -2,30 +2,25 @@ package course2_lesson3_OOP_p2;
 
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car();
-        Car car2 = new Car();
-        car.modelName = "car1";
-        car2.modelName = "car2";
-        car.wheelsCount = 4;
-        car2.wheelsCount = 4;
+        Car car = new Car("Shelby", 4);
+        Car car2 = new Car("Corvette", 4);
 
-        Truck truck = new Truck();
-        Truck truck2 = new Truck();
-        truck.modelName = "truck1";
-        truck2.modelName = "truck2";
-        truck.wheelsCount = 6;
-        truck2.wheelsCount = 8;
+        Truck truck = new Truck("Mack", 10);
+        Truck truck2 = new Truck("Scania", 12);
 
-        Bicycle mtb = new Bicycle("MTB",2);
-        Bicycle gravel = new Bicycle("Gravel",2);
-        mtb.fixTyre();
+        Bicycle mtb = new Bicycle("MTB", 2);
+        Bicycle gravel = new Bicycle("Gravel", 2);
 
         ServiceStation station = new ServiceStation();
-        station.check(car, null, null);
-        station.check(car2, null, null);
-//        station.check(null, bicycle, null);
-//        station.check(null, bicycle2, null);
-        station.check(null, null, truck);
-        station.check(null, null, truck2);
+
+        station.service(gravel);
+        station.service(mtb);
+
+        station.service(car);
+        station.service(car2);
+
+        station.service(truck);
+        station.service(truck2);
+
     }
 }

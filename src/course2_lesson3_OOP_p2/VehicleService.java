@@ -5,7 +5,8 @@ public interface VehicleService {
 
     void suddenTroubleFix();
 
-    void upgrade();
+    void fitTuneUpgrade();
 
     void regularService();
+
 }
