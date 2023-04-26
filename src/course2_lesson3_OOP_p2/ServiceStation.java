@@ -7,6 +7,10 @@ public class ServiceStation {
         this.stationName = stationName;
     }
 
+    public String getStationName() {
+        return stationName;
+    }
+
     public void service(Vehicle vehicle) {
 
         System.out.println("\n" + stationName + " Tech Service Station provides service to " + vehicle.getModelName()
